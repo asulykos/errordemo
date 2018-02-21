@@ -20,6 +20,7 @@ let root model dispatch =
                             div [] [
                               sprintf "#%d. %s" index txt |> str
                               input[
+                                Key (index.ToString())
                                 DefaultValue txt
                                 OnChange (fun ev -> dispatch (ChangeStr (index, (!!ev.target?value))))
                               ]
